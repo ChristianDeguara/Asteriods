@@ -15,3 +15,13 @@ function OnBeamInvisible(){
 	Destroy(this.gameObject);
 	
 }
+function OnTriggerEnter(Other:Collider){
+
+		
+			if(Other.gameObject.tag=="asteroid")
+				{
+					Destroy(this.gameObject);
+					Destroy(Other.gameObject);
+					Shipcontroller.score++;
+			}
+	}

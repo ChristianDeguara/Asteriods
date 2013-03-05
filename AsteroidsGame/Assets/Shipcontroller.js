@@ -5,9 +5,17 @@ var rightmost:float;
 var topmost:float;
 var bottommost:float;
 var laserBeam:Rigidbody;
+var lives:int;
+static var score:int;
 
 function Start () {
 
+}
+
+function OnGUI(){
+	
+	GUI.Label(Rect(2,2,200,25),"Lives: "+lives);
+	GUI.Label(Rect(2,27,200,25),"Score: "+score);
 }
 
 function Update () {
@@ -47,8 +55,22 @@ function Update () {
 		}
 		
 	if(Input.GetKeyDown(KeyCode.C)){
-	Instantiate(laserBeam,transform.position,transform.rotation);
+		Instantiate(laserBeam,transform.position,transform.rotation);
 	
+	}
+}
+	
+function OnTriggerEnter(Other:Collider)
+{
+			if(Other.gameObject.tag=="asteroid")
+		{
+			lives --;
+		
+			if(lives == 0)
+			{
+				Destroy(this.gameObject);
+		
+		}
 	}
 
 }
