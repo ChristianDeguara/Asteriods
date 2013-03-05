@@ -4,6 +4,7 @@ var leftmost:float;
 var rightmost:float;
 var topmost:float;
 var bottommost:float;
+var laserBeam:Rigidbody;
 
 function Start () {
 
@@ -44,5 +45,10 @@ function Update () {
 		{
 			speed = 20;
 		}
+		
+	if(Input.GetKeyDown(KeyCode.C)){
+	Instantiate(laserBeam,transform.position,transform.rotation);
+	
+	}
 
 }

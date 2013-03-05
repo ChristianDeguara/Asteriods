@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Asteroidcontroller.js" />
      <Compile Include="Assets\Border_Controller.js" />
+     <Compile Include="Assets\LaserBeam.js" />
      <Compile Include="Assets\Shipcontroller.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
