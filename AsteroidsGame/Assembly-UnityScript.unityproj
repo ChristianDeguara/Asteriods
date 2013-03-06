@@ -48,7 +48,9 @@
      <Compile Include="Assets\Asteroidcontroller.js" />
      <Compile Include="Assets\Border_Controller.js" />
      <Compile Include="Assets\LaserBeam.js" />
+     <Compile Include="Assets\Menu.js" />
      <Compile Include="Assets\Shipcontroller.js" />
+     <Compile Include="Assets\invader.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
