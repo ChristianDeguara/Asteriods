@@ -8,8 +8,28 @@ var laserBeam:Rigidbody;
 var lives:int;
 static var score:int;
 
-function Start () {
+var canfire:boolean;
 
+
+function Start () {
+	canfire=false;
+	
+	
+	autoFire();
+	
+	yield WaitForSeconds(5.0);
+	canfire = true;
+	
+}
+
+
+function autoFire(){
+	while(canfire==false)
+	{
+	print("autofire");
+	Instantiate(laserBeam,transform.position,transform.rotation);
+	yield WaitForSeconds(0.5);
+	}
 }
 
 function OnGUI(){
@@ -54,9 +74,12 @@ function Update () {
 			speed = 20;
 		}
 		
+	if (canfire==true)
+	{
 	if(Input.GetKeyDown(KeyCode.C)){
 		Instantiate(laserBeam,transform.position,transform.rotation);
 	
+	}
 	}
 }
 	
