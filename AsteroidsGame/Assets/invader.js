@@ -4,18 +4,23 @@ var theObject:Rigidbody;
 var theNewPos:Vector3;
 var maxPos:int=10;
 var minPos:int=-10;
-var max=15;
+var max=2;
 var i = 0;
 var speed:int;
+var invade:boolean;
  
  
  
  
 function Start(){ 
 
+for(i=0;i<max;i++)
+{
+ 
+spawn();
 
-	spawn();
- yield(WaitForSeconds(10));
+} 
+ 
 }
  
  
@@ -33,5 +38,5 @@ function spawn() {
  
 theNewPos= new Vector3 (Border_Controller.rightmost,Border_Controller.topmost-4,3);
 Instantiate(theObject,theNewPos,Quaternion.identity);
-
+yield(WaitForSeconds(5));
 }

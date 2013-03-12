@@ -35,6 +35,19 @@ function spawn() {
  
 
 print("made a new asteroid"+i);
-theNewPos= new Vector3 (Random.Range(minPos,maxPos),Random.Range(minPos,maxPos),3);
+
+var randomX:float;
+var randomY:float;
+
+randomX = Random.Range(minPos,maxPos);
+randomY = Random.Range(minPos,maxPos);
+
+if (randomX == 0)
+{
+	randomX +=1;
+}
+
+
+theNewPos= new Vector3 (randomX,randomY,3);
 Instantiate(theObject,theNewPos,Quaternion.identity);
 }
